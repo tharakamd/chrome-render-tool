@@ -3,8 +3,8 @@
 </div>
 
 <div class="list-container">
-  <div *ngFor="let animalName of animalNames" class="list-item">
-    {{animalName | titlecase}}
+  <div *ngFor="let animalName of animalsArray; trackBy: trackAnimal" class="list-item">
+    {{animalName.name | titlecase}}
   </div>
 </div>
 
