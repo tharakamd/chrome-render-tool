@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {animals, colors, Config, uniqueNamesGenerator} from 'unique-names-generator';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'rendering-optimizaing';
+
+  public animalNames: string[] = [];
+  private customConfig: Config = {
+    dictionaries: [colors, animals],
+    separator: ' ',
+    length: 2,
+  };
+
+  constructor() {
+    for (let i = 0; i < 15; i++) {
+      this.addNewAnimal();
+    }
+  }
+
+  addNewAnimal() {
+    this.animalNames.push(uniqueNamesGenerator(this.customConfig));
+  }
+
 }

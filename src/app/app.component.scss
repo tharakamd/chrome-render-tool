@@ -1,0 +1,13 @@
+.list-container {
+  border: 2px solid black;
+  width: fit-content;
+  height: 500px;
+  overflow: auto;
+}
+
+.list-item {
+  border: 1px solid black;
+  padding: 2px 10px;
+  width: 300px;
+
+}
